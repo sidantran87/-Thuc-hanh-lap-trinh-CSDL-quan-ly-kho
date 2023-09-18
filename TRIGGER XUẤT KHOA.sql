@@ -22,7 +22,7 @@ OPEN XUATKHOA_inserted
 		END
 		ELSE 
 			BEGIN
-			UPDATE TONKHO SET slx=slx-@soluong, ttx=ttx+@thanhtien 
+			UPDATE TONKHO SET SLC=@soluong-SLX, TTX=TTX+@thanhtien 
 			WHERE thoigian=@thoigian and makho=@makhoxuat
 			END;
 			FETCH NEXT FROM XUATKHOA_inserted 
