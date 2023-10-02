@@ -26,7 +26,7 @@ BEGIN
             INSERT INTO TONKHO(THOIGIAN, MAKHO, MATHUOC, SLD, TTD, SLN, TTN, SLX, TTX, SLC, TTC)
             VALUES (@thoigian, @makho, @mathuoc, 0, 0, @soluong, @thanhtien, 0, 0, @soluong, 0)
         ELSE
-            UPDATE TONKHO SET SLN = SLN + @soluong, TTN = TTN + @thanhtien, SLC = SLC + @soluong
+            UPDATE TONKHO SET SLN = SLN + @soluong, TTN = TTN + @thanhtien, SLX = SLX - @soluong, SLC = SLC + @soluong
             WHERE THOIGIAN = @thoigian AND MAKHO = @makho AND MATHUOC = @mathuoc
 
         FETCH NEXT FROM nhaptra_inserted
