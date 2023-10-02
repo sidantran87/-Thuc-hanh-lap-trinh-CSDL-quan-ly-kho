@@ -50,7 +50,7 @@ BEGIN
         FROM NHAPTRA
         WHERE Thoigian = @thoigian and Sophieu = @sophieu
 
-        UPDATE TONKHO SET SLN = SLN + @soluong, TTN = TTN + @thanhtien, SLX = SLX - @soluong, SLC = SLC + @soluong
+        UPDATE TONKHO SET SLN = SLN - @soluong, TTN = TTN - @thanhtien, SLX = SLX + @soluong, SLC = SLC - @soluong
         WHERE THOIGIAN = @thoigian AND MAKHO = @makho AND MATHUOC = @mathuoc
 
         FETCH NEXT FROM nhaptra_deleted
